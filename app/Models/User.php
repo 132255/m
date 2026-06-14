@@ -14,6 +14,8 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
  
+    protected $guard_name = 'web';
+ 
     protected $fillable = [
         'name', 'email', 'password', 'phone', 'cni',
         'avatar', 'provider', 'provider_id',
